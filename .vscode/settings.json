@@ -1,0 +1,13 @@
+{
+  "python.analysis.extraPaths": ["./src"],
+  "python.testing.unittestEnabled": true,
+  "python.testing.unittestArgs": ["-v", "-s", "./tests", "-p", "test_*.py"],
+  "python.testing.pytestEnabled": false,
+  "terminal.integrated.env.linux": { "PYTHONPATH": "${workspaceFolder}/src" },
+  "terminal.integrated.env.osx": { "PYTHONPATH": "${workspaceFolder}/src" },
+  "terminal.integrated.env.windows": { "PYTHONPATH": "${workspaceFolder}\\src" },
+  "editor.rulers": [100],
+  "files.trimTrailingWhitespace": true,
+  "chat.promptFiles": true,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true
+}

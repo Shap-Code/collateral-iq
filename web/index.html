@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collateral IQ</title>
+<style>
+  :root {
+    --ink: #1b2430;
+    --ink-soft: #5c6873;
+    --rule: #d6dce2;
+    --paper: #ffffff;
+    --panel: #f2f5f7;
+    --blueprint: #1f4e79;
+    --flag: #8c3a1f;
+    --clear: #2d6a4a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 1.25rem 4rem;
+    background: var(--paper);
+    color: var(--ink);
+    font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 68rem; margin: 0 auto; }
+
+  header { border-bottom: 2px solid var(--ink); padding: 2.5rem 0 1.25rem; }
+  h1 {
+    font: 600 1.6rem/1.2 Iowan Old Style, Palatino, Georgia, serif;
+    margin: 0 0 .3rem;
+    letter-spacing: -0.01em;
+  }
+  header p { margin: 0; color: var(--ink-soft); font-size: .92rem; }
+
+  .headline { display: flex; flex-wrap: wrap; gap: 2.75rem; padding: 1.75rem 0 2rem; }
+  .headline div span {
+    display: block; font-size: .8rem; color: var(--ink-soft); margin-bottom: .15rem;
+  }
+  .headline div strong {
+    font: 400 2rem/1 Iowan Old Style, Palatino, Georgia, serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  section { margin-bottom: 2.75rem; }
+  h2 {
+    font: 600 1rem/1.3 inherit;
+    margin: 0 0 .2rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--ink);
+  }
+  .hint { color: var(--ink-soft); font-size: .86rem; margin: .5rem 0 1rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  th {
+    text-align: left; font-weight: 600; color: var(--ink-soft);
+    font-size: .8rem; padding: .5rem .6rem .5rem 0; border-bottom: 1px solid var(--rule);
+  }
+  td { padding: .55rem .6rem .55rem 0; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; padding-right: 1.2rem; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  .bar { background: var(--panel); height: .55rem; border-radius: 1px; }
+  .bar i { display: block; height: 100%; background: var(--blueprint); border-radius: 1px; }
+
+  .tag { font-size: .78rem; font-weight: 600; }
+  .tag.review { color: var(--flag); }
+  .tag.clear { color: var(--clear); }
+  .reasons { color: var(--ink-soft); font-size: .85rem; }
+
+  .spark { display: block; }
+  .spark path { fill: none; stroke: var(--blueprint); stroke-width: 1.5; }
+
+  .todo {
+    border-left: 3px solid var(--blueprint);
+    background: var(--panel);
+    padding: .85rem 1rem;
+    font-size: .88rem;
+  }
+  .todo code { background: #fff; padding: .05rem .3rem; border: 1px solid var(--rule); }
+
+  #status { padding: 3rem 0; color: var(--ink-soft); }
+  @media (max-width: 620px) {
+    .hide-sm { display: none; }
+    .headline { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Collateral IQ</h1>
+    <p>Sales-comparison analytics for the West Valley demo portfolio</p>
+  </header>
+
+  <p id="status">Loading portfolio&hellip;</p>
+  <main id="app" hidden>
+    <div class="headline">
+      <div><span>Subjects under review</span><strong id="stat-subjects"></strong></div>
+      <div><span>Closed sales in the comp pool</span><strong id="stat-comps"></strong></div>
+      <div><span>Portfolio median $/sqft</span><strong id="stat-ppsf"></strong></div>
+      <div><span>Files flagged for review</span><strong id="stat-flags"></strong></div>
+    </div>
+
+    <section>
+      <h2>Files needing a second look</h2>
+      <p class="hint">Ranked by the quality checks in <code>metrics.portfolio_risk_flags()</code>. A clear file still gets reviewed, just not first.</p>
+      <table>
+        <thead><tr>
+          <th>Subject</th><th class="hide-sm">Submarket</th>
+          <th class="num">Indicated value</th><th>Status</th><th>Why</th>
+        </tr></thead>
+        <tbody id="flags"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Median price per square foot</h2>
+      <p class="hint">Unadjusted closed sales, so treat this as orientation rather than evidence.</p>
+      <table>
+        <thead><tr>
+          <th>Submarket</th><th class="num">$/sqft</th>
+          <th class="num hide-sm">Sales</th><th class="hide-sm">12-month trend</th><th></th>
+        </tr></thead>
+        <tbody id="ppsf"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Absorption</h2>
+      <p class="hint">Under 3 months of supply favours sellers; over 6 favours buyers. In between, market-conditions adjustments are hardest to defend.</p>
+      <table>
+        <thead><tr>
+          <th>Submarket</th><th class="num">Months supply</th>
+          <th class="num">Median days on market</th><th>Reading</th>
+        </tr></thead>
+        <tbody id="absorption"></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Not built yet</h2>
+      <p class="todo">
+        There is no page for a single subject's adjustment grid, even though
+        <code>/api/value?subject_id=SUBJ-001</code> already returns one.
+        Building it is the open-ended exercise in <code>docs/07-your-turn.md</code>.
+      </p>
+    </section>
+  </main>
+</div>
+
+<script>
+const money = n => n == null ? "n/a" : "$" + Math.round(n).toLocaleString();
+
+function sparkline(points) {
+  if (!points || points.length < 2) return "";
+  const values = points.map(p => p.median_ppsf);
+  const lo = Math.min(...values), hi = Math.max(...values);
+  const span = (hi - lo) || 1;
+  const d = values.map((v, i) => {
+    const x = (i / (values.length - 1)) * 96;
+    const y = 22 - ((v - lo) / span) * 20;
+    return `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`;
+  }).join(" ");
+  return `<svg class="spark" width="96" height="24" viewBox="0 0 96 24" aria-hidden="true"><path d="${d}"/></svg>`;
+}
+
+function render(data) {
+  document.getElementById("stat-subjects").textContent = data.subject_count;
+  document.getElementById("stat-comps").textContent = data.comp_count;
+  document.getElementById("stat-ppsf").textContent = "$" + data.average_ppsf.toFixed(0);
+  document.getElementById("stat-flags").textContent =
+    data.flags.filter(f => f.risk === "Review").length;
+
+  document.getElementById("flags").innerHTML = data.flags.map(f => `
+    <tr>
+      <td>${f.address}<br><span class="reasons">${f.subject_id}</span></td>
+      <td class="hide-sm">${f.submarket}</td>
+      <td class="num">${money(f.indicated_value)}</td>
+      <td><span class="tag ${f.risk.toLowerCase()}">${f.risk}</span></td>
+      <td class="reasons">${f.reasons.join("; ") || "No exceptions"}</td>
+    </tr>`).join("");
+
+  const peak = Math.max(...data.price_per_sqft.map(r => r.median_ppsf));
+  document.getElementById("ppsf").innerHTML = data.price_per_sqft.map(r => `
+    <tr>
+      <td>${r.submarket}</td>
+      <td class="num">$${r.median_ppsf.toFixed(2)}</td>
+      <td class="num hide-sm">${r.sales}</td>
+      <td class="hide-sm">${sparkline(data.trend[r.submarket])}</td>
+      <td style="width:28%"><div class="bar"><i style="width:${(r.median_ppsf / peak * 100).toFixed(1)}%"></i></div></td>
+    </tr>`).join("");
+
+  document.getElementById("absorption").innerHTML = data.absorption.map(a => `
+    <tr>
+      <td>${a.submarket}</td>
+      <td class="num">${a.months_supply}</td>
+      <td class="num">${a.median_dom}</td>
+      <td>${a.condition}</td>
+    </tr>`).join("");
+
+  document.getElementById("status").hidden = true;
+  document.getElementById("app").hidden = false;
+}
+
+fetch("/api/dashboard")
+  .then(r => r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)))
+  .catch(() => fetch("/api/dashboard").then(r => r.json()))
+  .then(render)
+  .catch(err => {
+    document.getElementById("status").textContent =
+      "Could not load the portfolio. Start the server with: python -m collateral_iq serve  (" + err.message + ")";
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+month,submarket,median_ppsf,median_sale_price,closed_sales,median_dom,months_supply
+2024-10,Surprise - Marley Park,212.04,455700,40,49,2.2
+2024-11,Surprise - Marley Park,214.61,444900,44,22,3.8
+2024-12,Surprise - Marley Park,214.22,462500,73,30,2.1
+2025-01,Surprise - Marley Park,215.55,458900,22,17,3.9
+2025-02,Surprise - Marley Park,214.34,460500,46,36,3.4
+2025-03,Surprise - Marley Park,215.74,474200,36,40,3.5
+2025-04,Surprise - Marley Park,218.61,473900,51,13,3.9
+2025-05,Surprise - Marley Park,217.94,454400,51,49,2.8
+2025-06,Surprise - Marley Park,221.27,476000,27,16,1.5
+2025-07,Surprise - Marley Park,218.59,470400,67,42,3.1
+2025-08,Surprise - Marley Park,222.45,464600,33,35,2.5
+2025-09,Surprise - Marley Park,222.32,453700,59,40,3.5
+2025-10,Surprise - Marley Park,224.67,464900,50,42,3.8
+2025-11,Surprise - Marley Park,221.75,480300,60,34,1.5
+2025-12,Surprise - Marley Park,223.68,466700,52,35,3.4
+2026-01,Surprise - Marley Park,227.03,477300,64,30,4.0
+2026-02,Surprise - Marley Park,227.35,455300,51,33,0.6
+2026-03,Surprise - Marley Park,227.1,490700,48,15,1.6
+2026-04,Surprise - Marley Park,227.48,473000,58,29,3.1
+2026-05,Surprise - Marley Park,226.72,495800,64,24,3.3
+2026-06,Surprise - Marley Park,230.29,468900,33,40,2.6
+2026-07,Surprise - Marley Park,231.31,507500,19,41,2.7
+2026-08,Surprise - Marley Park,229.26,468400,40,21,4.8
+2026-09,Surprise - Marley Park,232.96,498200,20,20,3.1
+2024-10,Surprise - Sun City Grand,230.42,497700,35,34,2.0
+2024-11,Surprise - Sun City Grand,233.43,488200,34,45,3.1
+2024-12,Surprise - Sun City Grand,231.59,506300,37,37,4.1
+2025-01,Surprise - Sun City Grand,232.41,484700,40,34,3.2
+2025-02,Surprise - Sun City Grand,233.13,495000,29,33,3.2
+2025-03,Surprise - Sun City Grand,232.56,506900,74,41,3.7
+2025-04,Surprise - Sun City Grand,235.48,516000,32,35,2.1
+2025-05,Surprise - Sun City Grand,237.84,498400,24,32,1.4
+2025-06,Surprise - Sun City Grand,234.9,480700,44,42,3.0
+2025-07,Surprise - Sun City Grand,236.44,492100,66,39,4.0
+2025-08,Surprise - Sun City Grand,237.28,502900,61,21,2.9
+2025-09,Surprise - Sun City Grand,239.07,485300,26,58,3.3
+2025-10,Surprise - Sun City Grand,239.72,509400,44,43,2.4
+2025-11,Surprise - Sun City Grand,240.84,492100,43,45,3.3
+2025-12,Surprise - Sun City Grand,240.54,509100,53,15,4.3
+2026-01,Surprise - Sun City Grand,240.46,503500,55,45,3.7
+2026-02,Surprise - Sun City Grand,241.39,510400,71,53,2.9
+2026-03,Surprise - Sun City Grand,244.7,506700,37,35,3.5
+2026-04,Surprise - Sun City Grand,244.78,525900,69,20,3.1
+2026-05,Surprise - Sun City Grand,243.97,532400,37,42,2.2
+2026-06,Surprise - Sun City Grand,243.87,518900,67,40,5.0
+2026-07,Surprise - Sun City Grand,247.44,523800,45,56,2.7
+2026-08,Surprise - Sun City Grand,249.48,528700,42,48,4.1
+2026-09,Surprise - Sun City Grand,247.02,531800,20,36,2.4
+2024-10,Peoria - Vistancia,230.23,462600,35,29,3.6
+2024-11,Peoria - Vistancia,230.89,487300,48,25,4.2
+2024-12,Peoria - Vistancia,234.37,481100,62,39,3.7
+2025-01,Peoria - Vistancia,233.91,477800,73,25,2.6
+2025-02,Peoria - Vistancia,235.17,489800,64,33,3.3
+2025-03,Peoria - Vistancia,233.75,484300,24,49,3.9
+2025-04,Peoria - Vistancia,237.91,479700,53,32,4.3
+2025-05,Peoria - Vistancia,237.32,475200,59,15,3.3
+2025-06,Peoria - Vistancia,239.83,508300,69,37,1.9
+2025-07,Peoria - Vistancia,241.42,508600,53,28,2.6
+2025-08,Peoria - Vistancia,239.49,501500,51,41,3.4
+2025-09,Peoria - Vistancia,242.12,517800,56,19,4.7
+2025-10,Peoria - Vistancia,242.42,524900,47,46,3.9
+2025-11,Peoria - Vistancia,244.9,514300,57,48,4.4
+2025-12,Peoria - Vistancia,245.03,527100,33,39,0.9
+2026-01,Peoria - Vistancia,246.17,523400,21,24,3.1
+2026-02,Peoria - Vistancia,249.56,527000,60,16,3.5
+2026-03,Peoria - Vistancia,246.03,528700,29,22,2.8
+2026-04,Peoria - Vistancia,247.61,497600,31,31,1.8
+2026-05,Peoria - Vistancia,248.97,547000,58,21,1.6
+2026-06,Peoria - Vistancia,251.64,503700,59,47,2.1
+2026-07,Peoria - Vistancia,253.36,533000,54,34,5.2
+2026-08,Peoria - Vistancia,253.27,539800,60,17,2.5
+2026-09,Peoria - Vistancia,253.66,514800,72,33,3.1
+2024-10,Goodyear - Estrella,204.07,414200,62,44,2.8
+2024-11,Goodyear - Estrella,202.42,437800,19,39,4.7
+2024-12,Goodyear - Estrella,205.54,440400,45,47,4.5
+2025-01,Goodyear - Estrella,204.25,445800,49,42,2.7
+2025-02,Goodyear - Estrella,204.43,447200,36,35,3.1
+2025-03,Goodyear - Estrella,207.53,447200,61,54,4.4
+2025-04,Goodyear - Estrella,209.76,425200,22,59,2.7
+2025-05,Goodyear - Estrella,206.56,442700,32,26,4.3
+2025-06,Goodyear - Estrella,209.64,433800,62,38,1.2
+2025-07,Goodyear - Estrella,209.79,423400,30,39,4.7
+2025-08,Goodyear - Estrella,209.91,426200,40,57,2.8
+2025-09,Goodyear - Estrella,213.17,453000,32,53,1.6
+2025-10,Goodyear - Estrella,212.62,447900,61,54,1.6
+2025-11,Goodyear - Estrella,214.89,430000,54,44,5.8
+2025-12,Goodyear - Estrella,214.82,457000,73,43,2.8
+2026-01,Goodyear - Estrella,213.96,452200,34,40,2.5
+2026-02,Goodyear - Estrella,216.57,437400,41,36,4.3
+2026-03,Goodyear - Estrella,218.16,472200,41,43,2.4
+2026-04,Goodyear - Estrella,215.54,460500,52,29,3.7
+2026-05,Goodyear - Estrella,218.12,468700,23,42,3.3
+2026-06,Goodyear - Estrella,216.93,444400,51,35,3.6
+2026-07,Goodyear - Estrella,217.48,445800,73,48,2.8
+2026-08,Goodyear - Estrella,220.25,464300,42,66,3.0
+2026-09,Goodyear - Estrella,219.94,472300,31,34,4.4
+2024-10,Glendale - Arrowhead,227.34,494500,30,28,3.9
+2024-11,Glendale - Arrowhead,227.45,473400,73,31,2.1
+2024-12,Glendale - Arrowhead,230.64,476900,21,33,3.8
+2025-01,Glendale - Arrowhead,229.2,495800,51,43,2.0
+2025-02,Glendale - Arrowhead,232.47,479400,49,28,3.0
+2025-03,Glendale - Arrowhead,232.1,495100,42,26,4.6
+2025-04,Glendale - Arrowhead,232.9,477400,63,23,3.0
+2025-05,Glendale - Arrowhead,234.22,510100,31,50,2.8
+2025-06,Glendale - Arrowhead,231.66,490600,57,53,3.7
+2025-07,Glendale - Arrowhead,232.48,481100,71,36,3.3
+2025-08,Glendale - Arrowhead,232.8,472500,51,26,3.1
+2025-09,Glendale - Arrowhead,233.59,481200,20,50,5.0
+2025-10,Glendale - Arrowhead,236.39,494200,37,36,4.1
+2025-11,Glendale - Arrowhead,235.7,507200,47,37,3.3
+2025-12,Glendale - Arrowhead,238.19,499500,30,35,4.4
+2026-01,Glendale - Arrowhead,240.42,518500,44,44,2.3
+2026-02,Glendale - Arrowhead,237.61,484900,74,26,3.7
+2026-03,Glendale - Arrowhead,241.07,527900,70,53,1.9
+2026-04,Glendale - Arrowhead,240.42,514800,33,51,2.5
+2026-05,Glendale - Arrowhead,241.14,513500,55,38,2.4
+2026-06,Glendale - Arrowhead,240.25,496900,70,38,2.7
+2026-07,Glendale - Arrowhead,243.01,507200,37,44,3.0
+2026-08,Glendale - Arrowhead,242.72,530100,65,28,4.1
+2026-09,Glendale - Arrowhead,243.83,511700,19,41,2.9

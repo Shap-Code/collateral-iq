@@ -1,0 +1,20 @@
+{
+  "name": "Collateral IQ",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.copilot",
+        "github.copilot-chat",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        "python.analysis.extraPaths": ["./src"],
+        "terminal.integrated.env.linux": { "PYTHONPATH": "${workspaceFolder}/src" }
+      }
+    }
+  },
+  "forwardPorts": [8000],
+  "postCreateCommand": "python -m unittest discover -s tests"
+}
